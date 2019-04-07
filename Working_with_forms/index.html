@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Working with forms</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="col-xs-12">Working with forms</h1>
+        </div>
+        <div class="row text-light bg-dark mb-4">
+
+            <ol class="tasks">
+                <li class="mb-3">The first task serves as an example, you do not need to change anything. Since as an action url I used form_process.php I created this file and set up a dispatcher switch that serves as a router or a funnel where it is determined how the data from the form will be processed.</li>
+                <li class="mb-3">
+                    Following the model of the first task, create a form that accepts:
+                    <ul>
+                        <li>rec 1</li>
+                        <li>rec 2</li>
+                        <li>rec 3</li>
+                        <li>rec 4</li>
+                    </ul>
+                    On the form_process.php random page, replace the word order and display. Each reflection site should display a different order of the word.
+                </li>
+                <li class="mb-3">
+                    Create a form containing 1 dropdown menu, 2 text boxes, 1 checkbox, and one message box:
+                    <ul>
+                        <li>select - options are Mr/Mrs</li>
+                        <li>input[type="text"] - Name</li>
+                        <li>input[type="text"] - Last Name</li>
+                        <li>textarea - Message</li>
+                        <li>input[type="checkbox"] - I agree with conditions</li>
+                    </ul>
+                    Accept and display data on the next page using appropriate HTML elements for displaying quotes. Checkbox for now let it just stay, although it does not serve us anything at form_process.php.
+                </li>
+                <li class="mb-3">Create a form that accepts 1 file, and that's just an image. Keep the image in the uploads folder.</li>
+            </ol>
+        </div>
+
+        <div class="row mb-1">
+            <div class="col-xs-12 col-md-6">
+                <form action="form_process.php" method="post" class="clearfix">
+                    <h3 class="col-xs-12 mb-4">1. primer</h3>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="ime">Test</span>
+                        </div>
+                        <input class="form-control" aria-label="test_input" aria-test_input="test_input" type="text" name="test_input" id="test_input">
+                        <input type="hidden" name="form_id" value="test_form">
+                        <div class="input-group-append">
+                            <input class="btn btn-primary" type="submit" value="Testiraj">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-xs-12 col-md-6">
+                <form action="form_process.php" method="post" class="clearfix">
+
+                    <h3 class="col-xs-12 mb-4">2. spin words</h3>
+
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="rec_1">Rec 1</span>
+                        </div>
+                        <input class="form-control" aria-label="rec_1" aria-describedby="rec_1" type="text" name="rec_1" id="rec_1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="rec_2">Rec 2</span>
+                        </div>
+                        <input class="form-control" aria-label="rec_2" aria-describedby="rec_2" type="text" name="rec_2" id="rec_2">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="rec_3">Rec 3</span>
+                        </div>
+                        <input class="form-control" aria-label="rec_3" aria-describedby="rec_3" type="text" name="rec_3" id="rec_3">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="rec_4">Rec 4</span>
+                        </div>
+                        <input class="form-control" aria-label="rec_4" aria-describedby="rec_4" type="text" name="rec_4" id="rec_4">
+                    </div>
+
+
+
+                    <div class="justify-content-md-start">
+                        <input type="hidden" name="form_id" value="word_spinner">
+                        <input class="btn btn-primary" type="submit" value="Spin">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-xs-12 col-md-6">
+                <form action="form_process.php" method="post" class="clearfix">
+
+                    <h3 class="col-xs-12 mb-4">3. Quote generator</h3>
+
+                    <div class="input-group mb-3">
+                        <select class="custom-select" name="prefix">
+                            <option>Izaberite prefix</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="ime">Name</span>
+                        </div>
+                        <input class="form-control" aria-label="ime" aria-describedby="ime" type="text" name="ime" id="ime">
+                    </div>
+
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="ime">Lastname</span>
+                        </div>
+                        <input class="form-control" aria-label="prezime" aria-describedby="prezime" type="text" name="prezime" id="prezime">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Quote</span>
+                        </div>
+                        <textarea class="form-control" aria-label="citat" name="citat"></textarea>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div>
+                                <input type="checkbox" aria-label="uslovi_koriscenja" name="uslovi_koriscenja" value="Da">
+                            </div>
+                        </div>
+                        <p class="mb-0 ml-3">I agree with conditions</p>
+                    </div>
+
+                    <div class="input-group-append mb-3">
+                        <input type="hidden" name="form_id" value="generator_citata">
+                        <input class="btn btn-primary" type="submit" value="Generate">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-xs-12 col-md-6">
+                <form action="form_process.php" method="post" class="clearfix" enctype="multipart/form-data">
+
+                    <h3>4. Saving photos</h3>
+
+                    <div class="custom-file mb-3">
+                        <input type="file" class="custom-file-input" name="slika" id="slika">
+                        <label class="custom-file-label" for="slika">Image</label>
+                    </div>
+                    
+                    <input type="hidden" name="form_id" value="cuvanje_slika">
+                    <input class="btn btn-primary" type="submit" value="Save">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+            <!-- Bootstrap core JavaScript -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
